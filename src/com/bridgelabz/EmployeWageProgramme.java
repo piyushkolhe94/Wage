@@ -5,13 +5,32 @@ public class EmployeWageProgramme {
 	static final int WAGEPERHOUR = 20;
 	static final int FULLDAYHOURS = 8;
 	static final int HALFDAYHOURS = 4;
+	static final int FULLDAYPRESENT = 1;
+	static final int HALFDAYPRESENT = 2;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation");
-
+        
+		int employeeHrs = 0;
+		int employeeWage = 0;
 		int fulldaypresent = 1;
 		int halfdaypresent = 2;
 		int value = (int) ((Math.random() * 10) % 3);
+		
+		switch (value) {
+        case HALFDAYPRESENT:
+        	employeeHrs = 4;
+            break;
+        case FULLDAYPRESENT:
+        	employeeHrs= 8;
+            break;
+        default:
+        	employeeHrs = 0;
+    }
+
+		employeeWage  = employeeHrs * WAGEPERHOUR ;
+    System.out.println("emp wage:" + employeeWage );
+
 
 		if (value == fulldaypresent) {
 			System.out.println("Employee is fulldaypresent");
@@ -27,5 +46,6 @@ public class EmployeWageProgramme {
     	   
 			System.out.println("Employee is Absent+ No Wage");
 		}
-	}
+			}
+	
 }
